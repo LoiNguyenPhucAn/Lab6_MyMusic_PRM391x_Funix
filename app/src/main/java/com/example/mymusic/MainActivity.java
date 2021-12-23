@@ -159,15 +159,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             while (!cursor.isAfterLast()) {
 
-                String name = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE));
+                String name = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE));
 
-                String path = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA));
+                String path = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA));
 
                 String album = "N/A";
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
 
-                    album = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ARTIST));
+                    album = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ARTIST));
 
                 }
 
